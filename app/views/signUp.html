@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create an account</title>
+        <link rel="stylesheet" href="/static/css/styles.css">
+    </head>
+    <body>
+        <main id="sign-up-form-container">
+            <div id="sign-up">
+                <form action="/api/signUp" method="POST">
+                    <fieldset>
+                        <legend>Create an account</legend>
+                    <div>
+                        <label for="usernameSignUp">Username</label>
+                        <input type="text" id="usernameSignUp" required class="form-text-input" name="username" placeholder="Enter username">
+                    </div>
+                    <div>
+                        <label for="firstNameSignUp">First name</label>
+                        <input type="text" id="firstNameSignUp" required class="form-text-input" name="firstName" placeholder="Enter first name">
+                    </div>
+                    <div>
+                        <label for="lastNameSignUp">Last name</label>
+                        <input type="text" id="lastNameSignUp" required class="form-text-input" name="lastName" placeholder="Enter last name">
+                    </div>
+                    <div>
+                        <label for="emailAddressSignUp">Email</label>
+                        <input type="email" id="emailAddressSignUp" required class="form-text-input" name="emailAddress" placeholder="Enter email address">
+                    </div>
+                    <div>
+                        <label for="passwordSignUp">Password</label>
+                        <input type="password" id="passwordSignUp" required class="form-text-input" name="password" placeholder="Enter password">
+                    </div>
+                    <button type="submit" id="create-account-btn" class="primary-btn">Create account</button>
+                    </fieldset>
+                </form>
+                <div class="or">
+                    <hr class="bar">
+                    <span>OR</span>
+                    <hr class="bar">
+                </div>
+                <a id="register-btn" class="secondary-btn" href="/api/signIn">Sign in</a>
+            </div>
+        </main>
+    </body>
+</html>

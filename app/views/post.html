@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>PostBill</title>
+    <script defer src="/static/scripts/post.js"></script>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/styling.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><img src="/static/img/site-logo.png" alt="billSplitter"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/post">Post Bill</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/viewBills">My Bills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/uome">UOMe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/iou">IOU</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>  
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center welcome">
+      <h1 class="display-4">Post Bill</h1>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+      <div class="col-md-8 order-md-1">
+          <!--Form for entering bill information-->
+          <h4 class="mb-3">Post Bill</h4>
+          <form action="./api/post" method="POST">
+            <div class="form-group">
+              <label for="bill_amount">Bill Amount:</label>
+              <input type="number" class="form-control" id="bill_amount" name="bill_amount" placeholder="Enter Bill Amount" required><br>
+              
+              <label for="split_number">Number of People Splitting With:</label>
+              <input type="number" class="form-control" id="split_number" name="split_number" placeholder="Enter Splitting Number" required><br>
+              
+              <label for="bill_type">Bill Type:</label>
+              <input type="text" class="form-control" id="bill_type" name="bill_type" placeholder="Enter Bill Type">
+              
+              <button class="btn btn-primary" type="submit">Post Bill</button>
+            </div>
+          </form>
+          
+          <hr class="mb-4">
+          <!--Form for adding members to bill-->
+          <h4 class="mb-3">Add Members</h4>
+          <form action="./api/addMembers" method="POST">
+            <input type="text" class="form-control" id="member" name="member" placeholder="Enter Members Username">
+            <button class="btn btn-primary" type="submit">Add Member</button>
+          </form>
+  
+          <hr class="mb-4">
+          <form action="./api/saveBill" method="POST">
+            <button class="btn btn-success btn-lg btn-block" type="submit">Save Bill</button>
+          </form>
+        </div>
+
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span id="billType" class="text-muted">Bill Type</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Number of Members</h6>
+              </div>
+              <span id="numberOfMembers" class="text-muted">5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Total Amount</h6>
+              </div>
+              <span id="totalAmount" class="text-muted">R500</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Individual Share</h6>
+              </div>
+              <span id="individualShare" class="text-muted">R100</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Members</h6>
+                <small id="memberList" class="text-muted">user1</small>
+              </div>
+            </li>
+          </ul>
+          <hr class="mb-4">
+          <form action="./api/cancelBill" method="POST">
+            <button class="btn btn-lg btn-block" type="submit">Cancel Bill</button>
+          </form>
+      </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html>

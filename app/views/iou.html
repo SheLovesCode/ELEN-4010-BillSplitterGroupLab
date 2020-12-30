@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>IOU</title>
+    <script defer src="/static/scripts/iou.js"></script>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/styling.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><img src="/static/img/site-logo.png" alt="billSplitter"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/post">Post Bill</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/viewBills">My Bills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/uome">UOMe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/iou">IOU</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+    
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center welcome">
+      <h1 class="display-4">Who You Owe</h1>
+    </div>
+    
+    <div class="container">
+      <div class="jumbotron text-center" id="total">
+      </div>
+    </div>
+
+    <div class="table-responsive lead" id="tableSection"></div>
+    
+    <form action="./api/settleBill" method="POST" id="formo">
+      <input type="hidden" id="payer" name="payer" value="PAYER">
+      <input type="hidden" id="billType" name="billType" value="BILLTYPE">
+    </form>
+  </body>
+</html>

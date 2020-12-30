@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>BillSplitterApp</title>
+        <link rel="stylesheet" href="/static/css/styles.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <div id="logo">
+                <img src="/static/img/site-logo.png" alt="billSplitter">
+            </div>
+            <nav class="links">
+                <a href="#">About</a>
+            </nav>
+        </header>
+        <div id="title">
+            <h1 id="homepage-title">Split bills for shared households</h1>
+        </div>
+        <main id="wrapper">
+            <div id="sign-in">
+                <form action="/api/signIn" method="POST">
+                    <div>
+                        <label for="usernameSignIn">Username</label>
+                        <input type="text" required id="usernameSignIn" class="form-text-input" name="username" placeholder="Enter username">
+                    </div>
+                    <div>
+                        <label for="passwordSignIn">Password</label>
+                        <input type="password" required id="passwordSignIn" class="form-text-input" name="password" placeholder="Enter password">
+                    </div>
+                        <button type="submit" id="sign-in-btn" class="primary-btn">Sign In</button>
+                </form>
+                <div class="or">
+                    <hr class="bar">
+                    <span>OR</span>
+                    <hr class="bar">
+                </div>
+                <a id="register-btn" class="secondary-btn" href="/api/signUp">Create an account</a>
+            </div>
+        </main>
+    </body>
+</html>

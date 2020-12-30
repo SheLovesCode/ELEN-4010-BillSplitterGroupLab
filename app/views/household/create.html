@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create Household</title>
+    </head>
+
+    <body>
+        <form action="/api/household/create" method="POST">
+            <fieldset>
+                <legend>Create Shared household</legend>
+                <label>Household Owner: <input type="text" name="householdOwner" placeholder="Enter your username"></label><br>
+                <label>Household name: <input type="text" name="householdName" placeholder="Enter household name"></label><br>
+                <label>Number of members: <input type="number" name="numOfhouseholdMembers"></label><br>
+                <button type="submit">Create household</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
